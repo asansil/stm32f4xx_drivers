@@ -148,17 +148,17 @@ static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle ){
 }
 
 
-uint16_t AHB_Prescaler[8] = {2,4,8,16,64,128,256,512};
+/*uint16_t AHB_Prescaler[8] = {2,4,8,16,64,128,256,512};
 uint16_t APB1_Prescaler[] = {2,4,8,16};
 
 
 uint32_t RCC_GetPLLOutputClock(){	//TODO: Currently I'm not using PLL as sys clk
 	return 0;
-}
+}*/
 
 
 
-uint32_t RCC_GetPCLK1Value(void){
+/*uint32_t RCC_GetPCLK1Value(void){
 	uint32_t pclk1, SystemClk;
 
 	uint8_t clksrc, temp, ahbp, apb1p;
@@ -202,7 +202,7 @@ uint32_t RCC_GetPCLK1Value(void){
 	pclk1 = (SystemClk/ahbp)/apb1p;
 
 	return pclk1;
-}
+}*/
 
 /*************************************************************
  * @fn				- I2C_PeriClockControl

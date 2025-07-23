@@ -312,12 +312,12 @@ typedef struct
 /*
  * Clock Enable Macros for USARTx peripherals
  */
-#define USART1_PCCK_EN() (RCC->APB2ENR |= (1 << 4))
-#define USART2_PCCK_EN() (RCC->APB1ENR |= (1 << 17))
-#define USART3_PCCK_EN() (RCC->APB1ENR |= (1 << 18))
-#define UART4_PCCK_EN()  (RCC->APB1ENR |= (1 << 19))
-#define UART5_PCCK_EN()  (RCC->APB1ENR |= (1 << 20))
-#define USART6_PCCK_EN() (RCC->APB1ENR |= (1 << 5))
+#define USART1_PCLK_EN() (RCC->APB2ENR |= (1 << 4))
+#define USART2_PCLK_EN() (RCC->APB1ENR |= (1 << 17))
+#define USART3_PCLK_EN() (RCC->APB1ENR |= (1 << 18))
+#define UART4_PCLK_EN()  (RCC->APB1ENR |= (1 << 19))
+#define UART5_PCLK_EN()  (RCC->APB1ENR |= (1 << 20))
+#define USART6_PCLK_EN() (RCC->APB1ENR |= (1 << 5))
 
 
 /*
@@ -363,12 +363,12 @@ typedef struct
 /*
  * Clock Disable Macros for USARTx peripherals
  */
-#define USART1_PCCK_DI() (RCC->APB2ENR &= ~(1 << 4))
-#define USART2_PCCK_DI() (RCC->APB1ENR &= ~(1 << 17))
-#define USART3_PCCK_DI() (RCC->APB1ENR &= ~(1 << 18))
-#define UART4_PCCK_DI()  (RCC->APB1ENR &= ~(1 << 19))
-#define UART5_PCCK_DI()  (RCC->APB1ENR &= ~(1 << 20))
-#define USART6_PCCK_DI() (RCC->APB1ENR &= ~(1 << 5))
+#define USART1_PCLK_DI() (RCC->APB2ENR &= ~(1 << 4))
+#define USART2_PCLK_DI() (RCC->APB1ENR &= ~(1 << 17))
+#define USART3_PCLK_DI() (RCC->APB1ENR &= ~(1 << 18))
+#define UART4_PCLK_DI()  (RCC->APB1ENR &= ~(1 << 19))
+#define UART5_PCLK_DI()  (RCC->APB1ENR &= ~(1 << 20))
+#define USART6_PCLK_DI() (RCC->APB1ENR &= ~(1 << 5))
 
 
 /*
@@ -411,12 +411,12 @@ typedef struct
 /*
  * Reset USARTx
  */
-#define USART1_PCCK_RESET()  	do{ RCC->APB2RSTR |=  (1 << 4); RCC->APB2RSTR &= ~(1 << 4); }while(0)
-#define USART2_PCCK_RESET()		do{ RCC->APB1RSTR |=  (1 << 17); RCC->APB1RSTR &= ~(1 << 17); }while(0)
-#define USART3_PCCK_RESET()		do{ RCC->APB1RSTR |=  (1 << 18); RCC->APB1RSTR &= ~(1 << 18); }while(0)
-#define UART4_PCCK_RESET()		do{ RCC->APB1RSTR |=  (1 << 19); RCC->APB1RSTR &= ~(1 << 19); }while(0)
-#define UART5_PCCK_RESET()		do{ RCC->APB1RSTR |=  (1 << 20); RCC->APB1RSTR &= ~(1 << 20); }while(0)
-#define USART6_PCCK_RESET()		do{ RCC->APB2RSTR |=  (1 << 5); RCC->APB2RSTR &= ~(1 << 5); }while(0)
+#define USART1_REG_RESET()  	do{ RCC->APB2RSTR |=  (1 << 4); RCC->APB2RSTR &= ~(1 << 4); }while(0)
+#define USART2_REG_RESET()		do{ RCC->APB1RSTR |=  (1 << 17); RCC->APB1RSTR &= ~(1 << 17); }while(0)
+#define USART3_REG_RESET()		do{ RCC->APB1RSTR |=  (1 << 18); RCC->APB1RSTR &= ~(1 << 18); }while(0)
+#define UART4_REG_RESET()		do{ RCC->APB1RSTR |=  (1 << 19); RCC->APB1RSTR &= ~(1 << 19); }while(0)
+#define UART5_REG_RESET()		do{ RCC->APB1RSTR |=  (1 << 20); RCC->APB1RSTR &= ~(1 << 20); }while(0)
+#define USART6_REG_RESET()		do{ RCC->APB2RSTR |=  (1 << 5); RCC->APB2RSTR &= ~(1 << 5); }while(0)
 
 
 /*
@@ -455,6 +455,13 @@ typedef struct
 #define IRQ_NO_I2C2_ER     34
 #define IRQ_NO_I2C3_EV     72
 #define IRQ_NO_I2C3_ER     73
+
+#define IRQ_NO_USART1	    37
+#define IRQ_NO_USART2	    38
+#define IRQ_NO_USART3	    39
+#define IRQ_NO_UART4	    52
+#define IRQ_NO_UART5	    53
+#define IRQ_NO_USART6	    71
 
 
 /*
@@ -683,6 +690,7 @@ typedef struct
 #include "stm32f407xx_spi_driver.h"
 #include "stm32f407xx_i2c_driver.h"
 #include "stm32f407xx_usart_driver.h"
+#include "stm32407xx_rcc_driver.h"
 
 
 #endif /* INC_STM32F407XX_H_ */

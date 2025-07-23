@@ -83,11 +83,6 @@ void GPIO_ButtonInit(void)
 
 int main(void)
 {
-
-	uint8_t commandcode;
-
-	uint8_t len;
-
 	printf("Application is running\n");
 
 	GPIO_ButtonInit();
