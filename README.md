@@ -6,10 +6,6 @@ Development and testing have been carried out using the **STM32F407G-DISC1** dev
 
 ---
 
-🔧 **Status:** This project is still in development. It may contain frequent changes and incomplete parts.
-
----
-
 ## 📂 Example Projects
 
 A set of example files is included in the `Src` directory to verify and demonstrate the functionality of the implemented drivers:
